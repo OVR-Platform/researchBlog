@@ -19,5 +19,5 @@
       "url": "https://over-static.s3.eu-central-1.amazonaws.com/research/2026-07-lidar-validation/pipeline_dense_aligned_to_eagle.ply"
     }
   ],
-  "post_url": "https://ovr-platform.github.io/research/posts/2026-07-lidar-validation/"
+  "post_url": "https://ovr-platform.github.io/researchBlog/posts/2026-07-lidar-validation/"
 }

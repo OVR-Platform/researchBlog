@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-31T15:08:31+0000",
+  "generated": "2026-07-31T15:51:31+0000",
   "posts": [
     {
       "slug": "2026-07-lidar-validation",
@@ -17,6 +17,10 @@
       "date": "2026-07-31",
       "entry": "post.html",
       "resources": [
+        {
+          "label": "Validation code (GitHub)",
+          "url": "https://github.com/OVR-Platform/lidar-validation"
+        },
         {
           "label": "Aligned clouds (PLY, 623 MB)",
           "url": "https://over-static.s3.eu-central-1.amazonaws.com/research/2026-07-lidar-validation/pipeline_dense_aligned_to_eagle.ply"

@@ -1,0 +1,23 @@
+{
+  "slug": "2026-07-lidar-validation",
+  "type": "Research Note",
+  "title": "How Accurate Is Our Automatic 360°-Camera Reconstruction Pipeline?",
+  "subtitle": "Benchmarking the OVR 360° Pipeline Against a Simultaneous LIDAR Survey of the Same Site",
+  "description": "We rode a LIDAR scanner and our 360° camera on the same pole through a 40 × 25 m site and compared the two reconstructions point by point: median surface agreement of 3.9 cm — at the reference scanner's own declared accuracy — drift-free geometry over the 118 m path, and one uniform 2.9% scale disagreement that the measurement chain traces to the metric reference rather than the reconstruction, removable with a single scalar.",
+  "tags": [
+    "Research Note",
+    "360° Reconstruction",
+    "LIDAR",
+    "Benchmark"
+  ],
+  "author": "OVER Research",
+  "date": "2026-07-31",
+  "entry": "post.html",
+  "resources": [
+    {
+      "label": "Aligned clouds (PLY, 623 MB)",
+      "url": "https://over-static.s3.eu-central-1.amazonaws.com/research/2026-07-lidar-validation/pipeline_dense_aligned_to_eagle.ply"
+    }
+  ],
+  "post_url": "https://ovr-platform.github.io/research/posts/2026-07-lidar-validation/"
+}

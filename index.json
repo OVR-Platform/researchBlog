@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-31T14:39:28+0000",
+  "generated": "2026-07-31T15:08:31+0000",
   "posts": [
     {
       "slug": "2026-07-lidar-validation",
@@ -46,6 +46,55 @@
         }
       ],
       "post_url": "https://ovr-platform.github.io/researchBlog/posts/2026-07-r3-finetune/"
+    },
+    {
+      "slug": "over-3d-maps-dataset",
+      "type": "Technical Report",
+      "title": "The OVER 3D Maps Dataset",
+      "subtitle": "Internet-Scale Real-World 3D Data for Training Large Geospatial Models",
+      "description": "A technical overview of the OVER 3D Maps Dataset: 270K+ real-world indoor and outdoor locations with 100M+ images, depth maps and metric scaling data — orders of magnitude larger than the datasets powering current Vision Foundation Models, and built for training Large Geospatial Models.",
+      "tags": [
+        "Technical Report",
+        "Dataset",
+        "LGM",
+        "Machine Perception"
+      ],
+      "author": "OVER Research",
+      "date": "",
+      "resources": [
+        {
+          "label": "Technical Report",
+          "url": "https://ovr-assets.s3.eu-central-1.amazonaws.com/website/Dataset_technical_report.pdf"
+        },
+        {
+          "label": "Project Page",
+          "url": "https://ovr-platform.github.io/OVR-MAPS/"
+        }
+      ]
+    },
+    {
+      "slug": "overmaps-1k",
+      "type": "Open Dataset",
+      "title": "OverMaps-1k",
+      "subtitle": "An Open Dataset of 1,000 Real-World 3D Maps",
+      "description": "An open-source sample of the OVER 3D Maps Dataset released on Hugging Face: 1,000 real-world 3D maps with multi-view images, depth and metric scale, ready for benchmarking visual relocalization, depth estimation and 3D reconstruction models.",
+      "tags": [
+        "Open Dataset",
+        "Dataset",
+        "Open Source"
+      ],
+      "author": "OVER Research",
+      "date": "",
+      "resources": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/datasets/OverTheReality/OverMaps_1k"
+        },
+        {
+          "label": "Project Page",
+          "url": "https://ovr-platform.github.io/OVR-MAPS/"
+        }
+      ]
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-31T16:02:54+0000",
+  "generated": "2026-08-03T08:41:26+0000",
   "posts": [
     {
       "slug": "2026-07-lidar-validation",
@@ -26,7 +26,7 @@
           "url": "https://over-static.s3.eu-central-1.amazonaws.com/research/2026-07-lidar-validation/pipeline_dense_aligned_to_eagle.ply"
         }
       ],
-      "post_url": "https://ovr-platform.github.io/researchBlog/posts/2026-07-lidar-validation/"
+      "post_url": "https://research.ovr.ai/posts/2026-07-lidar-validation/"
     },
     {
       "slug": "2026-07-r3-finetune",
@@ -49,7 +49,7 @@
           "url": "https://huggingface.co/datasets/OverTheReality/OverMaps_1k"
         }
       ],
-      "post_url": "https://ovr-platform.github.io/researchBlog/posts/2026-07-r3-finetune/"
+      "post_url": "https://research.ovr.ai/posts/2026-07-r3-finetune/"
     },
     {
       "slug": "over-3d-maps-dataset",

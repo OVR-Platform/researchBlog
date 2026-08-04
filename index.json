@@ -1,6 +1,29 @@
 {
-  "generated": "2026-08-03T08:41:26+0000",
+  "generated": "2026-08-04T14:09:07+0000",
   "posts": [
+    {
+      "slug": "2026-07-r3-finetune",
+      "type": "Research Note",
+      "title": "Can 1,000 Open Scenes Make a State-of-the-Art 3D Model Better?",
+      "subtitle": "Assessing the OVER Dataset by Fine-Tuning a 3D Foundation Model on Its Open Sample",
+      "description": "An empirical assessment of the OVER dataset for research, run entirely on OverMaps-1k — the open 1,000-scene sample anyone can download from Hugging Face: pose accuracy improves visibly on our domain, catastrophic forgetting is measured and defused through WiSE weight merging, and a scaling analysis shows how much data the gain requires.",
+      "tags": [
+        "Research Note",
+        "LGM",
+        "Machine Perception",
+        "Fine-Tuning"
+      ],
+      "author": "OVER Research",
+      "date": "2026-07-31",
+      "entry": "r3_blog.html",
+      "resources": [
+        {
+          "label": "OverMaps-1k",
+          "url": "https://huggingface.co/datasets/OverTheReality/OverMaps_1k"
+        }
+      ],
+      "post_url": "https://research.ovr.ai/posts/2026-07-r3-finetune/"
+    },
     {
       "slug": "2026-07-lidar-validation",
       "type": "Research Note",
@@ -27,29 +50,6 @@
         }
       ],
       "post_url": "https://research.ovr.ai/posts/2026-07-lidar-validation/"
-    },
-    {
-      "slug": "2026-07-r3-finetune",
-      "type": "Research Note",
-      "title": "Can 1,000 Open Scenes Make a State-of-the-Art 3D Model Better?",
-      "subtitle": "Assessing the OVER Dataset by Fine-Tuning a 3D Foundation Model on Its Open Sample",
-      "description": "An empirical assessment of the OVER dataset for research, run entirely on OverMaps-1k — the open 1,000-scene sample anyone can download from Hugging Face: pose accuracy improves visibly on our domain, catastrophic forgetting is measured and defused through WiSE weight merging, and a scaling analysis shows how much data the gain requires.",
-      "tags": [
-        "Research Note",
-        "LGM",
-        "Machine Perception",
-        "Fine-Tuning"
-      ],
-      "author": "OVER Research",
-      "date": "2026-07-31",
-      "entry": "r3_blog.html",
-      "resources": [
-        {
-          "label": "OverMaps-1k",
-          "url": "https://huggingface.co/datasets/OverTheReality/OverMaps_1k"
-        }
-      ],
-      "post_url": "https://research.ovr.ai/posts/2026-07-r3-finetune/"
     },
     {
       "slug": "over-3d-maps-dataset",

@@ -158,7 +158,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 72px;color:var(--muted);f
 <article>
 <header class="hero"><div class="wrap">
   <p class="eyebrow">Research note &middot; pose &amp; depth estimation</p>
-  <h1>Can our data make a state-of-the-art 3D model better?</h1>
+  <h1>Can 1,000 Open Scenes Make a State-of-the-Art 3D Model Better?</h1>
   <p class="standfirst">We fine-tuned R3, a state-of-the-art streaming 3D reconstruction model, on roughly one thousand of our COLMAP scenes. The short answer is yes &mdash; measurably, reproducibly, and on the checkpoint people actually deploy. The longer answer is the work around it: what breaks when you push a foundation model onto new data (depth, external benchmarks), how we walked every regression back, and where we ended up with a model that beats the public checkpoint on its own turf.</p>
   <p class="meta">R3 &mdash; relative-pose regression on a DA3 / DINOv2-L backbone [1,2,3] &middot; both released variants studied: &laquo;short&raquo; (4&ndash;32 views) and &laquo;long&raquo; (32&ndash;100 views, the deployment default)<br>~1000 of our COLMAP scenes, metric ARKit poses [4,5] &middot; replay anchor: ARKitScenes [6]<br>Eval: Sim3-aligned ATE &middot; 50 held-out scenes in-domain &middot; TUM-RGBD [7] &middot; an independent 800-frame FPV video vs a COLMAP reference</p>
 </div></header>

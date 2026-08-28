@@ -1,6 +1,29 @@
 {
-  "generated": "2026-08-05T09:52:09+0000",
+  "generated": "2026-08-28T15:25:26+0000",
   "posts": [
+    {
+      "slug": "2026-08-gaussian-bot",
+      "type": "Research Note",
+      "title": "A VLM Inside a 3D Capture Follows the Coordinate, Not the Room",
+      "subtitle": "Driving a Vision-Language Model Through a Gaussian-Splat Reconstruction, and Measuring How Much of It Is Vision",
+      "description": "We put a robot pose inside a Gaussian-splat capture, rendered its view live at every step and let a vision-language model choose one action per frame. It works as a loop and produces a measured arrival — 19 steps, 1.03 m inside a 1.20 m radius, scored geometrically rather than self-reported — and a more useful negative result: a trivial compass follower reproduces 35–71% of the agent's actions, and if the goal's direction is withheld it never approaches the target, so this is coordinate-following with a visual veto rather than vision-and-language navigation. Two findings come with it: a harness that phrases privileged information as an instruction stops measuring the model, and a goal is only scorable if the capture walked inside its success radius (one of ours contained none of 438 capture poses). Pointed the other way, the same walk could hunt the poses a capture barely saw and hand them to a generative filler — stated at the end as a direction, deliberately not evidenced here.",
+      "tags": [
+        "Research Note",
+        "Gaussian Splatting",
+        "Embodied AI",
+        "Vision-Language Models"
+      ],
+      "author": "OVER Research",
+      "date": "2026-08-28",
+      "entry": "post.html",
+      "resources": [
+        {
+          "label": "Code — gaussian-bot (GitHub)",
+          "url": "https://github.com/OVR-Platform/gaussian-bot"
+        }
+      ],
+      "post_url": "https://research.ovr.ai/posts/2026-08-gaussian-bot/"
+    },
     {
       "slug": "2026-07-lidar-validation",
       "type": "Research Note",

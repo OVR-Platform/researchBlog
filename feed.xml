@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>OVER Research</title>
+  <link>https://research.ovr.ai/</link>
+  <description>Research notes from OVER on spatial intelligence and physical AI: 3D reconstruction, Gaussian splatting and geospatial models, with open code, models and data.</description>
+  <language>en</language>
+  <lastBuildDate>Fri, 28 Aug 2026 00:00:00 +0000</lastBuildDate>
+  <atom:link href="https://research.ovr.ai/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>A VLM Inside a 3D Capture Follows the Coordinate, Not the Room</title>
+    <link>https://research.ovr.ai/posts/2026-08-gaussian-bot/</link>
+    <guid isPermaLink="true">https://research.ovr.ai/posts/2026-08-gaussian-bot/</guid>
+    <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+    <description>We put a robot pose inside a Gaussian-splat capture, rendered its view live at every step and let a vision-language model choose one action per frame. It works as a loop and produces a measured arrival — 19 steps, 1.03 m inside a 1.20 m radius, scored geometrically rather than self-reported — and a more useful negative result: a trivial compass follower reproduces 35–71% of the agent&#x27;s actions, and if the goal&#x27;s direction is withheld it never approaches the target, so this is coordinate-following with a visual veto rather than vision-and-language navigation. Two findings come with it: a harness that phrases privileged information as an instruction stops measuring the model, and a goal is only scorable if the capture walked inside its success radius (one of ours contained none of 438 capture poses). Pointed the other way, the same walk could hunt the poses a capture barely saw and hand them to a generative filler — stated at the end as a direction, deliberately not evidenced here.</description>
+    <category>Research Note</category>
+    <category>Gaussian Splatting</category>
+    <category>Embodied AI</category>
+    <category>Vision-Language Models</category>
+  </item>
+  <item>
+    <title>How Accurate Is Our Automatic 360°-Camera Reconstruction Pipeline?</title>
+    <link>https://research.ovr.ai/posts/2026-07-lidar-validation/</link>
+    <guid isPermaLink="true">https://research.ovr.ai/posts/2026-07-lidar-validation/</guid>
+    <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+    <description>We rode a LIDAR scanner and our 360° camera on the same pole through a 40 × 25 m site and compared the two reconstructions point by point: median surface agreement of 3.9 cm — at the reference scanner&#x27;s own declared accuracy — drift-free geometry over the 118 m path, and one uniform 2.9% scale disagreement that the measurement chain traces to the metric reference rather than the reconstruction, removable with a single scalar.</description>
+    <category>Research Note</category>
+    <category>360° Reconstruction</category>
+    <category>LIDAR</category>
+    <category>Benchmark</category>
+  </item>
+  <item>
+    <title>Can 1,000 Open Scenes Make a State-of-the-Art 3D Model Better?</title>
+    <link>https://research.ovr.ai/posts/2026-07-r3-finetune/</link>
+    <guid isPermaLink="true">https://research.ovr.ai/posts/2026-07-r3-finetune/</guid>
+    <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+    <description>An empirical assessment of the OVER dataset for research, run entirely on OverMaps-1k — the open 1,000-scene sample anyone can download from Hugging Face: pose accuracy improves visibly on our domain, catastrophic forgetting is measured and defused through WiSE weight merging, and a scaling analysis shows how much data the gain requires.</description>
+    <category>Research Note</category>
+    <category>LGM</category>
+    <category>Machine Perception</category>
+    <category>Fine-Tuning</category>
+  </item>
+</channel>
+</rss>

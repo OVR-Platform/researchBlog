@@ -1,0 +1,27 @@
+{
+  "slug": "2026-09-imu-metric-scale",
+  "type": "Research Note",
+  "title": "Can a 360° Camera Measure Its Own Scale?",
+  "subtitle": "Metric Scale for Insta360 Reconstructions from the Camera's Embedded IMU, Validated Against a Co-Mounted LiDAR",
+  "description": "We replaced the smartphone that gives our 360° reconstructions their metric scale with the 1 kHz IMU already inside the Insta360 X5. Against a LiDAR on the same pole the inertial scale is off by 0.81% on average over nine surveys, 2.4× closer than the phone reference it replaces. On the way we found that the textbook visual-inertial alignment, solved over a whole survey, overestimates scale by 3.4% with a consistent sign; solving each contiguous run on its own and averaging removes the bias. On fifty production surveys (33 km) the public estimator ran unattended, passed its own checks every time and agreed with the phone to σ = 2.3%.",
+  "tags": [
+    "Research Note",
+    "360° Reconstruction",
+    "Visual-Inertial",
+    "Metric Scale"
+  ],
+  "author": "OVER Research",
+  "date": "2026-09-30",
+  "entry": "post.html",
+  "resources": [
+    {
+      "label": "Code — imu-metric-scale (GitHub)",
+      "url": "https://github.com/OVR-Platform/imu-metric-scale"
+    },
+    {
+      "label": "Dataset — OverMaps360-50 (Hugging Face)",
+      "url": "https://huggingface.co/datasets/OverTheReality/OverMaps360_50"
+    }
+  ],
+  "post_url": "https://research.ovr.ai/posts/2026-09-imu-metric-scale/"
+}

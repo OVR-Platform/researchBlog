@@ -5,8 +5,19 @@
   <link>https://research.ovr.ai/</link>
   <description>Research notes from OVER on spatial intelligence and physical AI: 3D reconstruction, Gaussian splatting and geospatial models, with open code, models and data.</description>
   <language>en</language>
-  <lastBuildDate>Fri, 28 Aug 2026 00:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 30 Sep 2026 00:00:00 +0000</lastBuildDate>
   <atom:link href="https://research.ovr.ai/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Can a 360° Camera Measure Its Own Scale?</title>
+    <link>https://research.ovr.ai/posts/2026-09-imu-metric-scale/</link>
+    <guid isPermaLink="true">https://research.ovr.ai/posts/2026-09-imu-metric-scale/</guid>
+    <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+    <description>The 1 kHz IMU inside an Insta360 X5 gives our 360° reconstructions metric scale to 0.81% against a co-mounted LiDAR, 2.4× closer than the phone it replaced. On the way we found that the textbook visual-inertial alignment, solved over a whole survey, overestimates scale by 3.4% with a consistent sign; solving each contiguous run on its own and averaging removes the bias. On fifty production surveys (33 km) the public estimator ran unattended, passed its own checks every time and agreed with the phone to σ = 2.3%.</description>
+    <category>Research Note</category>
+    <category>360° Reconstruction</category>
+    <category>Visual-Inertial</category>
+    <category>Metric Scale</category>
+  </item>
   <item>
     <title>A VLM Inside a 3D Capture Follows the Coordinate, Not the Room</title>
     <link>https://research.ovr.ai/posts/2026-08-gaussian-bot/</link>

@@ -228,9 +228,8 @@ footer{border-top:1px solid var(--line);padding:36px 0 72px;color:var(--muted);f
   makes the metric reference heterogeneous, because two AR platforms and their versions do
   not behave alike. And it extrapolates: the burst takes about fifteen seconds over a few
   metres, so the scale of a walk of several hundred metres rests on a small corner of it.
-  Our <a href="https://research.ovr.ai/posts/2026-07-lidar-validation/">July note</a> met the consequence head-on &mdash; a uniform 2.9% scale
-  disagreement between the model and a LiDAR survey of the same site, which we traced to the
-  phone reference.</p>
+  Measured against a co-mounted LiDAR (&sect;02), the phone reference is off by 1.9% on
+  average and by up to 4.4% on a single survey.</p>
   <p>The camera already carries a better candidate. The Insta360 X5 and X6 record a gyroscope
   and an accelerometer at 1&thinsp;kHz into the video file. The accelerometer measures
   specific force in metres per second squared, and for a trajectory in arbitrary model units
@@ -274,9 +273,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 72px;color:var(--muted);f
       <tr><td>camera IMU, segment-wise (this note)</td><td><strong>+0.07%</strong></td><td class="good"><strong>0.81%</strong></td><td class="good"><strong>2.11%</strong></td><td><strong>7 of 9</strong></td></tr>
     </tbody>
   </table></div>
-  <p>Survey L1 is the site of our <a href="https://research.ovr.ai/posts/2026-07-lidar-validation/">July note</a>, where the phone-scaled
-  model and the LiDAR disagreed by 2.9%. It is the hardest of the nine for the IMU too, and
-  even there the camera's own sensor lands closer to the LiDAR than the phone does
+  <p>Survey L1, shown below, is the hardest of the nine for the IMU, and even there the camera's own sensor lands closer to the LiDAR than the phone does
   (&minus;2.11% against +2.92%). Across all nine, an instrument that shares nothing with the
   LiDAR agrees with it to 0.8% on average; the phone, measured the same way, is off by
   1.9%.</p>

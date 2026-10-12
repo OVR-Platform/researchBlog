@@ -25,7 +25,7 @@
 <meta property="article:tag" content="360° Reconstruction">
 <meta property="article:tag" content="Visual-Inertial">
 <meta property="article:tag" content="Metric Scale">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Can a 360° Camera Measure Its Own Scale?", "alternativeHeadline": "Metric Scale for Insta360 Reconstructions from the Camera's Embedded IMU, Validated Against a Co-Mounted LiDAR", "description": "The 1 kHz IMU inside an Insta360 X5 gives our 360° reconstructions metric scale to 0.81% against a co-mounted LiDAR, 2.4× closer than the phone it replaced. On the way we found that the textbook visual-inertial alignment, solved over a whole survey, overestimates scale by 3.4% with a consistent sign; solving each contiguous run on its own and averaging removes the bias. On fifty production surveys (33 km) the public estimator ran unattended, passed its own checks every time and agreed with the phone to σ = 2.3%.", "datePublished": "2026-09-30", "url": "https://research.ovr.ai/posts/2026-09-imu-metric-scale/", "mainEntityOfPage": "https://research.ovr.ai/posts/2026-09-imu-metric-scale/", "keywords": ["Research Note", "360° Reconstruction", "Visual-Inertial", "Metric Scale"], "author": {"@type": "Organization", "name": "OVER Research"}, "publisher": {"@type": "Organization", "name": "OVER", "url": "https://www.overthereality.ai", "sameAs": ["https://github.com/OVR-Platform", "https://huggingface.co/OverTheReality", "https://twitter.com/OVRtheReality"]}, "isPartOf": {"@type": "Blog", "name": "OVER Research", "url": "https://research.ovr.ai/"}, "isBasedOn": ["https://github.com/OVR-Platform/imu-metric-scale", "https://huggingface.co/datasets/OverTheReality/OverMaps360_50"], "image": "https://research.ovr.ai/assets/img/420e05ed3508.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Can a 360° Camera Measure Its Own Scale?", "alternativeHeadline": "Metric Scale for Insta360 Reconstructions from the Camera's Embedded IMU, Validated Against a Co-Mounted LiDAR", "description": "The 1 kHz IMU inside an Insta360 X5 gives our 360° reconstructions metric scale to 0.81% against a co-mounted LiDAR, 2.4× closer than the phone it replaced. On the way we found that the textbook visual-inertial alignment, solved over a whole survey, overestimates scale by 3.4% with a consistent sign; solving each contiguous run on its own and averaging removes the bias. On fifty production surveys (33 km) the public estimator ran unattended, passed its own checks every time and agreed with the phone to σ = 2.3%.", "datePublished": "2026-09-30", "url": "https://research.ovr.ai/posts/2026-09-imu-metric-scale/", "mainEntityOfPage": "https://research.ovr.ai/posts/2026-09-imu-metric-scale/", "keywords": ["Research Note", "360° Reconstruction", "Visual-Inertial", "Metric Scale"], "author": {"@type": "Organization", "name": "OVER Research"}, "publisher": {"@type": "Organization", "name": "OVER", "url": "https://www.overthereality.ai", "sameAs": ["https://github.com/OVR-Platform", "https://huggingface.co/OverTheReality", "https://twitter.com/OVRtheReality"]}, "isPartOf": {"@type": "Blog", "name": "OVER Research", "url": "https://research.ovr.ai/"}, "isBasedOn": ["https://github.com/OVR-Platform/imu-metric-scale", "https://huggingface.co/datasets/OverTheReality/insta360-imu-metric-scale-surveys", "https://huggingface.co/datasets/OverTheReality/OverMaps360_50"], "image": "https://research.ovr.ai/assets/img/420e05ed3508.png"}</script>
 <!-- seo:end -->
 </head>
 <body>
@@ -206,9 +206,10 @@ footer{border-top:1px solid var(--line);padding:36px 0 72px;color:var(--muted);f
   its own checks every time and agreed with the phone to &sigma;&nbsp;=&nbsp;2.3%.</p>
   <p class="meta">Insta360 X5 (validated) and X6 (sensor characterised) &middot; gyroscope + accelerometer at 1&thinsp;kHz, read from the native recording [1]<br>
   Input: camera poses of the production SfM reconstruction [2], unchanged &middot; linear visual-inertial alignment [3&ndash;5], per contiguous run<br>
-  Eval: 9 surveys with co-mounted LiDAR [6] &middot; 1 survey with ArUco markers [7] &middot; 50 production surveys vs smartphone AR poses</p>
+  Eval: 9 surveys with co-mounted LiDAR [6] &middot; 1 survey with ArUco markers [7] &middot; 50 production surveys vs smartphone AR poses &middot; 30 public-benchmark reference trajectories [24]</p>
   <div class="repro">
     <a href="https://github.com/OVR-Platform/imu-metric-scale" target="_blank" rel="noopener"><span class="dot"></span>estimator &amp; sensor tools &mdash; GitHub</a>
+    <a href="https://huggingface.co/datasets/OverTheReality/insta360-imu-metric-scale-surveys" target="_blank" rel="noopener">the 9 LiDAR surveys &mdash; Hugging Face</a>
     <a href="https://huggingface.co/datasets/OverTheReality/OverMaps360_50" target="_blank" rel="noopener">the 50 surveys &mdash; OverMaps360-50 on Hugging Face</a>
   </div>
 </div></header>
@@ -255,7 +256,9 @@ footer{border-top:1px solid var(--line);padding:36px 0 72px;color:var(--muted);f
   eight from a second. For each survey the LiDAR cloud was registered to the reconstruction
   with a closed-form initialisation and a scaled ICP cascade on the dense clouds [8,9]; the
   factor it returns is the error of the phone reference that scaled the model, and comparing
-  it with the IMU estimate gives the IMU's error.</p>
+  it with the IMU estimate gives the IMU's error. All nine surveys are public [25]: recording,
+  IMU, reconstruction, LiDAR cloud and the registration between them, so every number in
+  this section can be checked from the raw data.</p>
   <p>The inertial scale has a mean error of <strong>+0.07%</strong>, a mean absolute error of
   <strong>0.81%</strong> and a worst case of 2.11%. The phone reference, on the same models,
   has a mean of &minus;0.41%, a mean absolute error of 1.94% and a worst case of 4.36%.
@@ -476,13 +479,29 @@ footer{border-top:1px solid var(--line);padding:36px 0 72px;color:var(--muted);f
   confirms the verdict: the joint solution lies above the per-run mean on 34 surveys of
   fifty, and on three it collapses outright to scales between 0.000 and 0.064 while the
   per-run estimates on the same surveys stay tight.</p>
-  <p>Two smaller checks close the deployment picture. On a survey with printed ArUco markers
+  <p>A printed-marker survey closes the deployment picture. On a survey with ArUco markers
   [7], whose own geometry pins scale to 0.987&ndash;1.005 once a 1% print shrinkage is
-  measured and corrected, the IMU reads 0.989 and the phone 1.000: both inside the target,
-  the IMU near its lower edge.
-  And the estimator is blind to the frame it is handed: applying a random similarity (scale
-  0.23&ndash;8.0, rotation 42&ndash;176&deg;) to eleven input models changes the recovered
-  scale by at most <strong>0.034%</strong> once divided out. Any units, any orientation.</p>
+  measured and corrected, the IMU reads 0.989 and the phone 1.000: both inside the target.</p>
+  <p><strong>The estimator alone, on a public benchmark.</strong> Every survey so far mixes two
+  sources of error: the estimator, and the reconstruction it reads. To isolate the first we
+  ran it on the 30 sequences of the public Hilti-Trimble-Oxford benchmark [24]: indoor walks
+  through a construction site, 69 to 276&thinsp;s and 72 to 352&thinsp;m each (5.5&thinsp;km in
+  total), recorded with an Insta360 ONE RS 1-inch and its 1&thinsp;kHz IMU, with the camera
+  trajectory measured by a rigidly attached LiDAR-inertial system. The estimator is handed
+  that reference trajectory directly, decimated to 3&thinsp;Hz and supplied as a model of poses
+  only. The recovered scale has a mean error of <strong>&minus;0.07%</strong> (median
+  &minus;0.24%) and a standard deviation of 1.28%; 18 sequences of 30 land within 1%, 28
+  within 2%, the worst at 3.2%, and all thirty pass the quality checks. On the 25 sequences the
+  benchmark uses for ranking, the mean error is &minus;0.26% and the mean absolute error
+  0.85%. On trajectories without reconstruction error the estimator has no bias, and its
+  spread per sequence is about 1% on recordings of one to five minutes. The same runs also
+  speak to &sect;04: on these trajectories even the whole-survey solution is unbiased
+  (&minus;0.06% on average), which supports the reading that its 3.4% on our surveys comes
+  from slow inconsistencies of the reconstruction, not from the sensor.</p>
+  <p>The thirty trajectories double as a test that the estimator is blind to the frame it is
+  handed. Each was supplied at scale 1/40, 1 and 40, with a random rotation and translation:
+  once divided by the applied factor, the three recovered scales agree on every sequence to
+  better than <strong>0.0001%</strong>, and all pass. Any units, any orientation.</p>
 </section>
 
 <section>
@@ -542,7 +561,10 @@ footer{border-top:1px solid var(--line);padding:36px 0 72px;color:var(--muted);f
     five times the median residual removed before a second solve; the reported scale is the
     mean of the run scales. LiDAR references: closed-form initialisation plus scaled ICP of
     the scanner cloud to the reconstruction [8,9]; fiducial reference from triangulated
-    ArUco centre distances within 50&deg; of the optical axis.</p>
+    ArUco centre distances within 50&deg; of the optical axis. Benchmark: the 30 reference
+    trajectories of [24], decimated to 3&thinsp;Hz, scaled by 1/40, 1 and 40 with a random
+    rotation and translation, and supplied as pose-only models; the error is the recovered
+    scale times the applied factor, minus one.</p>
     <p><strong>Data rigor.</strong> Every number in this note was computed with the public
     estimator [23] at its default settings, on inputs anyone can obtain; the lens, the
     references and a no-exclusion rule were fixed before any result was read. The ten surveys
@@ -608,11 +630,13 @@ footer{border-top:1px solid var(--line);padding:36px 0 72px;color:var(--muted);f
     <li>Campos, Montiel &amp; Tard&oacute;s. <b>Inertial-Only Optimization for Visual-Inertial Initialization.</b> ICRA 2020 &mdash; the non-linear refinement we do not yet run.</li>
     <li>Zhang &amp; Singh. <b>LOAM: Lidar Odometry and Mapping in Real-time.</b> RSS 2014 &mdash; the SLAM family behind the LiDAR reference.</li>
     <li>OVER Research. <b>imu-metric-scale</b> &mdash; the estimator, sensor tools and ablation scripts used for every number in this note (<a href="https://github.com/OVR-Platform/imu-metric-scale" target="_blank" rel="noopener">github.com/OVR-Platform/imu-metric-scale</a>).</li>
+    <li>Centanni, Zhang, Tao, Kindle, Neuhaus, Koss, Patel, Helmberger, Szymanska, Graeber &amp; Fallon. <b>Hilti-Trimble-Oxford Dataset: 360 Visual-Inertial Benchmark with Floor Plan Priors for SLAM and Localization.</b> arXiv:2607.06464, 2026 &mdash; the public benchmark whose 30 reference trajectories test the estimator on its own in &sect;07.</li>
+    <li>OverTheReality. <b>Insta360 surveys with LiDAR reference for metric-scale validation</b> &mdash; the nine LiDAR surveys of &sect;02 with recordings, IMU, reconstructions, LiDAR clouds and registrations, Hugging Face 2026 (<a href="https://huggingface.co/datasets/OverTheReality/insta360-imu-metric-scale-surveys" target="_blank" rel="noopener">huggingface.co/datasets/OverTheReality/insta360-imu-metric-scale-surveys</a>).</li>
   </ol>
 </section>
 
 </div>
-<footer><div class="wrap">Research note &middot; every result measured on production reconstructions against a co-mounted LiDAR, printed markers and smartphone AR poses; figures regenerated from the measured estimator outputs. The estimator, the sensor-characterisation tools and the ablation scripts are on <a href="https://github.com/OVR-Platform/imu-metric-scale" target="_blank" rel="noopener">GitHub</a>; the fifty production surveys are <a href="https://huggingface.co/datasets/OverTheReality/OverMaps360_50" target="_blank" rel="noopener">OverMaps360-50</a> [16].
+<footer><div class="wrap">Research note &middot; every result measured on production reconstructions against a co-mounted LiDAR, printed markers and smartphone AR poses; figures regenerated from the measured estimator outputs. The estimator, the sensor-characterisation tools and the ablation scripts are on <a href="https://github.com/OVR-Platform/imu-metric-scale" target="_blank" rel="noopener">GitHub</a>; the nine LiDAR surveys are on <a href="https://huggingface.co/datasets/OverTheReality/insta360-imu-metric-scale-surveys" target="_blank" rel="noopener">Hugging Face</a> [25] and the fifty production surveys are <a href="https://huggingface.co/datasets/OverTheReality/OverMaps360_50" target="_blank" rel="noopener">OverMaps360-50</a> [16].
 </div></footer>
 </article>
 <footer class="ovr-foot"><div class="ovr-foot-in">

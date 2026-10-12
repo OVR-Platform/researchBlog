@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-02T08:01:57+0000",
+  "generated": "2026-10-12T13:40:13+0000",
   "posts": [
     {
       "slug": "2026-09-imu-metric-scale",
@@ -20,6 +20,10 @@
         {
           "label": "Code — imu-metric-scale (GitHub)",
           "url": "https://github.com/OVR-Platform/imu-metric-scale"
+        },
+        {
+          "label": "Dataset — 9 LiDAR reference surveys (Hugging Face)",
+          "url": "https://huggingface.co/datasets/OverTheReality/insta360-imu-metric-scale-surveys"
         },
         {
           "label": "Dataset — OverMaps360-50 (Hugging Face)",

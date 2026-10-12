@@ -19,6 +19,10 @@
       "url": "https://github.com/OVR-Platform/imu-metric-scale"
     },
     {
+      "label": "Dataset — 9 LiDAR reference surveys (Hugging Face)",
+      "url": "https://huggingface.co/datasets/OverTheReality/insta360-imu-metric-scale-surveys"
+    },
+    {
       "label": "Dataset — OverMaps360-50 (Hugging Face)",
       "url": "https://huggingface.co/datasets/OverTheReality/OverMaps360_50"
     }
